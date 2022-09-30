@@ -1,0 +1,120 @@
+:root{
+    /*primary colors*/
+    --Cyan:hsl(179, 62%, 43%);
+    --Bright-Yellow: hsl(71, 73%, 54%);
+    /*neutral color*/
+    --Light-Gray: hsl(204, 43%, 93%);
+    --Grayish-Blue:hsl(218, 22%, 67%);
+    --white: rgb(255, 255, 255);
+}
+body{
+    font-family: "Karla", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--Light-Gray);
+}
+.container{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr 1fr;
+    box-shadow: 0 0 1em .1em var(--Grayish-Blue);
+    width:23em;
+    border-radius: .6em;
+}
+[class*="container__"]{
+    padding: 0 1.5em;
+}
+.text-cyan{
+    color: var(--Cyan);
+}
+.text-green{
+    color:var(--Bright-Yellow);
+}
+.text-gray{
+    color: var(--Grayish-Blue);
+    line-height: 1.7em;
+}
+.text-white{
+    color: var(--white)
+}
+.text-extra-big{
+    font-size: 1.8em;
+}
+.text-big{
+    font-size: 1.4em;
+}
+.text-medium{
+    font-size: 1.2em;
+}
+.text-normal{
+ font-size: 1em;
+ font-weight: 400;
+ opacity: .8;
+}
+.text-transparent{
+    opacity: .6;
+    font-weight: 400;
+}
+.btn-cta{
+    text-decoration: none;
+    color: var(--white);
+}
+.container__top{
+    background-color: var(--white);
+    border-radius: .6em .6em 0 0;
+}
+.container__middle{
+    background-color: var(--Cyan);
+}
+.btn-cta{
+    display: block;
+    background-color: var(--Bright-Yellow);
+    width: 100%;
+    padding: .6em 0;
+    border-radius: .5em;
+    text-align: center;
+    box-shadow: 0 .5em 1em .1em rgba(0, 117, 130, 0.486);
+}
+.container__bot{
+    background-color: var(--Cyan);
+    opacity: .8;
+    border-radius: 0 0 .6em .6em;
+    padding-bottom: .5em;
+}
+.list{
+    list-style:none;
+    padding: 0;
+    line-height: 1.4em;
+}
+
+@media (hover: hover){
+    .btn-cta:hover{
+        filter: saturate(1.2);
+    }
+}
+@media screen and (min-width: 40rem) {
+    .container{
+        width: 40em;
+        grid-auto-flow: column;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+        grid-auto-flow: dense;
+        
+    }
+    .container__top{
+        grid-area: span 1 /span 2
+    }
+    .container__middle{
+        border-bottom-left-radius: .6em;
+    }
+    .container__bot{
+       border-radius: 0 0 .6em 0;
+    }
+    [class*="container__"]{
+        padding: 2em;
+    }
+}
